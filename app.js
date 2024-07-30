@@ -50,7 +50,15 @@ console.log(reverseWords("JavaScript is fun")); // Output: "fun is JavaScript"
 // If there are multiple words with the same length, return the first one.
 
 function findLongestWord(words) {
-    // Your code here
+    // need to iterate through each word string and test the length then return the longest
+
+    let longestWord = '';  // place to put the word string
+    for (let word of words) {
+      if (word.length > longestWord.length) { /// iterating through the word strings to test the length
+        longestWord = word;  ///and swapping out if it's longer each iteration
+        }
+    }
+    return longestWord; // finally, returning the word with the largest length
 }
 
 console.log(findLongestWord(["apple", "banana", "cherry", "date"])); // Output: "banana"
