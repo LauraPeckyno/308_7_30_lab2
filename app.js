@@ -5,9 +5,9 @@ function findLargest(a, b, c) {
     // Your code here
     if (a >= b && a >= c) {
         return a;
-    } else if (c >= b && c >= a) { 
+    } else if (c >= b && c >= a) {
         return c;
-    } else { 
+    } else {
         return b
     };
 };
@@ -37,7 +37,7 @@ function reverseWords(sentence) {
 }
 // Split the sentence into word arrays using the split function
 // Reverse the word arrays using the reverse function
-    // Put them back together using a join. They need to be a string.
+// Put them back together using a join. They need to be a string.
 console.log(reverseWords("Hello world!")); // Output: "world! Hello"
 console.log(reverseWords("The quick brown fox")); // Output: "fox brown quick The"
 console.log(reverseWords("JavaScript is fun")); // Output: "fun is JavaScript"
@@ -54,8 +54,8 @@ function findLongestWord(words) {
 
     let longestWord = '';  // place to put the word string
     for (let word of words) {
-      if (word.length > longestWord.length) { /// iterating through the word strings to test the length
-        longestWord = word;  ///and swapping out if it's longer each iteration
+        if (word.length > longestWord.length) { /// iterating through the word strings to test the length
+            longestWord = word;  ///and swapping out if it's longer each iteration
         }
     }
     return longestWord; // finally, returning the word with the largest length
@@ -71,11 +71,23 @@ console.log(findLongestWord(["red", "blue", "green"])); // Output: "green"
 // the sentence and the corresponding value is the number of times that word appears in the sentence.
 
 function countWords(sentence) {
-    // Your code here
-}
+    let wordCount = {}; // created an object for my words
+    let words = sentence.split(' '); // split the sentence up unto individual words using a space as the divider
 
-console.log(countWords("hello world hello")); 
+    for (let word of words) { 
+        if (wordCount[word]) {  // If the word is already in the object
+          wordCount[word]++; // add one to the total
+        } else {
+          // Otherwise, add the word to the object with a count of 1
+          wordCount[word] = 1;
+        }
+      }
+      return wordCount; // Return the word counts and continue the iteration until you are out of words
+}
+console.log(countWords("hello world hello"));
 // Output: { hello: 2, world: 1 }
 
-console.log(countWords("this is a test this is only a test")); 
+console.log(countWords("this is a test this is only a test"));
 // Output: { this: 2, is: 2, a: 2, test: 2, only: 1 }
+
+// ok, I had a lot of help with this one. I did some research and they suggested a couple of different ways to do it. This made the most sense to me. 
