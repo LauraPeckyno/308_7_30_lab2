@@ -3,9 +3,9 @@
 
 function findLargest(a, b, c) {
     // Your code here
-    if (a >= b && a >= c) {
+    if (a > b && a > c) {
         return a;
-    } else if (c >= b && c >= a) {
+    } else if (c > b && c > a) {
         return c;
     } else {
         return b
