@@ -74,10 +74,10 @@ function countWords(sentence) {
     let numWords = {}; // created an empty object to collect the number of words
     let words = sentence.split(' '); // words will be the split up sentence. split the sentence up unto individual word strings using a space as the divider
     for (let word of words) {  // for..of loop to iterate through the array of words
-        if (numWords[word]) {  // If the word is already in the object
-          numWords[word]++; // add one to the total
+        if (numWords[word]) {  // If the word is already a key in the object
+          numWords[word]++; // add one to the total for the word
         } else {
-          // Otherwise, add the word to the object with a count of 1
+          // Otherwise, add the word as a key in the object with a count of 1
           numWords[word] = 1;
         }
         // console.log(numWords);  added this here to make sure I was counting all of the words. It checks out.
