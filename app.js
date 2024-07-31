@@ -71,18 +71,18 @@ console.log(findLongestWord(["red", "blue", "green"])); // Output: "green"
 // the sentence and the corresponding value is the number of times that word appears in the sentence.
 
 function countWords(sentence) {
-    let wordCount = {}; // created an object for my words
-    let words = sentence.split(' '); // split the sentence up unto individual words using a space as the divider
-
-    for (let word of words) { 
-        if (wordCount[word]) {  // If the word is already in the object
-          wordCount[word]++; // add one to the total
+    let numWords = {}; // created an empty object to collect the number of words
+    let words = sentence.split(' '); // words will be the split up sentence. split the sentence up unto individual word strings using a space as the divider
+    for (let word of words) {  // for..of loop to iterate through the array of words
+        if (numWords[word]) {  // If the word is already in the object
+          numWords[word]++; // add one to the total
         } else {
           // Otherwise, add the word to the object with a count of 1
-          wordCount[word] = 1;
+          numWords[word] = 1;
         }
+        // console.log(numWords);  added this here to make sure I was counting all of the words. It checks out.
       }
-      return wordCount; // Return the word counts and continue the iteration until you are out of words
+      return numWords; // Return the word count and continue the iteration until you are out of words in words
 }
 console.log(countWords("hello world hello"));
 // Output: { hello: 2, world: 1 }
