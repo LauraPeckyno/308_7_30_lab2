@@ -20,23 +20,14 @@ console.log(findLargest(8, 2, 6)); // Output: 8
 // Description: Write a function reverseWords that takes a string as an argument and returns a new string where the order of the words 
 // in the sentence are reversed, but the words themselves aren't.
 
-// Well shoot. I started off misunderstanding the task. I've reversed the entire sentence. I'll need to start over.  
-//         function reverseWords(sentence) {
-//         let backwords = ''; // create an empty string for your reversed letters
-//         for (let i = sentence.length - 1; i >= 0; i--) { //check the sentence length and begin pulling each letter from it
-//             backwords += sentence[i]; //dump the letters into an array
-//         }
-//         return backwords; /// execute the loop
-//     };
-
 function reverseWords(sentence) {
     let indWords = sentence.split(' ');
     let swapWords = indWords.reverse();
     let backwardsSentence = swapWords.join(' ');
     return backwardsSentence;
 }
-// Split the sentence into word arrays using the split function
-// Reverse the word arrays using the reverse function
+// Split the sentence into word strings/arrays using the split function
+// Reverse the word strings/arrays using the reverse function
 // Put them back together using a join. They need to be a string.
 console.log(reverseWords("Hello world!")); // Output: "world! Hello"
 console.log(reverseWords("The quick brown fox")); // Output: "fox brown quick The"
